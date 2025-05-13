@@ -4,19 +4,23 @@
   "description": "Core testing framework for KIP-31",
   "type": "module",
   "scripts": {
-    "test": "npx --node-options=--experimental-vm-modules jest",
-    "test:watch": "npx --node-options=--experimental-vm-modules jest --watch",
-    "test:coverage": "npx --node-options=--experimental-vm-modules jest --coverage"
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "jest": {
-    "transform": {},
     "testEnvironment": "node",
+    "transform": {},
     "extensionsToTreatAsEsm": [".js"],
     "moduleNameMapper": {
       "^(\\.{1,2}/.*)\\.js$": "$1"
     },
     "verbose": true,
     "collectCoverage": true,
+    "coverageProvider": "v8",
     "coverageThreshold": {
       "global": {
         "branches": 80,
@@ -27,7 +31,8 @@
     }
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.11"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
