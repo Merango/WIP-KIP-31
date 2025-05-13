@@ -1,8 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const yaml = require('js-yaml');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import yaml from 'js-yaml';
 
-// Mock the Prometheus configuration file reading
+// Get the directory name for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Mock the entire fs and js-yaml modules
 jest.mock('fs');
 jest.mock('js-yaml');
 
@@ -18,8 +23,7 @@ scrapes:
 
   beforeEach(() => {
     // Reset the mocks before each test
-    fs.readFileSync.mockReset();
-    yaml.load.mockReset();
+    jest.resetAllMocks();
   });
 
   test('should parse Prometheus configuration correctly', () => {
