@@ -3,6 +3,7 @@ export default {
   testEnvironment: 'node',
   verbose: true,
   collectCoverage: true,
+  coverageProvider: 'v8',
   extensionsToTreatAsEsm: ['.js'],
   transform: {},
   moduleNameMapper: {
@@ -15,5 +16,9 @@ export default {
       lines: 80,
       statements: -10
     }
-  }
+  },
+  // Ensure proper handling of ES modules
+  transformIgnorePatterns: [
+    'node_modules/(?!js-yaml)/'
+  ]
 };
