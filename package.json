@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "Core testing framework for KIP-31",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "npx jest",
+    "test:watch": "npx jest --watch",
+    "test:coverage": "npx jest --coverage"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
