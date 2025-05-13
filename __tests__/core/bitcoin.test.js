@@ -1,7 +1,12 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Mock the Bitcoin configuration file reading
+// Get the directory name for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Mock the entire fs module
 jest.mock('fs');
 
 describe('Bitcoin Configuration Module', () => {
@@ -15,7 +20,7 @@ testnet=1
 
   beforeEach(() => {
     // Reset the mock before each test
-    fs.readFileSync.mockReset();
+    jest.resetAllMocks();
   });
 
   test('should read Bitcoin configuration correctly', () => {
