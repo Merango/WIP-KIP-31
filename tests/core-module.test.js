@@ -1,4 +1,4 @@
-import CoreModule from '../src/core-module.js';
+const CoreModule = require('../src/core-module');
 
 describe('CoreModule', () => {
   describe('validateInput', () => {
