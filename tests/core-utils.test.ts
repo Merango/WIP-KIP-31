@@ -12,7 +12,7 @@ describe('CoreUtils', () => {
       expect(CoreUtils.isPositiveNumber(-5)).toBe(false);
     });
 
-    it('should return false for non-numeric values', () => {
+    it('should return false for non-finite numbers', () => {
       expect(CoreUtils.isPositiveNumber(NaN)).toBe(false);
       expect(CoreUtils.isPositiveNumber(Infinity)).toBe(false);
     });
@@ -25,8 +25,8 @@ describe('CoreUtils', () => {
     });
 
     it('should throw error for non-positive numbers', () => {
-      expect(() => CoreUtils.safeAdd(0, 5)).toThrow('Invalid input');
-      expect(() => CoreUtils.safeAdd(-3, 4)).toThrow('Invalid input');
+      expect(() => CoreUtils.safeAdd(0, 5)).toThrow('Both arguments must be positive numbers');
+      expect(() => CoreUtils.safeAdd(-3, 4)).toThrow('Both arguments must be positive numbers');
     });
   });
 });
