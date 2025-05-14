@@ -1,0 +1,14 @@
+{
+  "name": "kip-31-core-modules",
+  "version": "0.1.0",
+  "description": "Core Modules Testing Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.11"
+  }
+}
