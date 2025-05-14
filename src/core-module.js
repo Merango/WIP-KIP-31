@@ -2,7 +2,7 @@
  * Core module for KIP-31 project
  * Provides basic utility functions for testing
  */
-class CoreModule {
+export default class CoreModule {
   /**
    * Validates input data
    * @param {*} input - Input to validate
@@ -34,5 +34,3 @@ class CoreModule {
     return input;
   }
 }
-
-module.exports = CoreModule;
