@@ -1,9 +1,11 @@
 #!/bin/bash
-# Ensure we're in the project root
+set -e
+
+# Navigate to project root
 cd "$(dirname "$0")/.."
 
-# Install dependencies
-yarn install
+# Ensure dependencies are installed
+npm install
 
-# Run tests with coverage
-yarn test
+# Run Jest tests with coverage
+npx jest --coverage
