@@ -1,3 +1,9 @@
 #!/bin/bash
-# Script to run Jest tests with proper configuration
-./node_modules/.bin/jest tests
+# Ensure we're in the project root
+cd "$(dirname "$0")/.."
+
+# Install dependencies
+yarn install
+
+# Run tests with coverage
+yarn test
