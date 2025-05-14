@@ -1,22 +1,19 @@
 #!/bin/bash
-# Initialize the project and install dependencies
+set -e
 
-# Install npm if not exists
-if ! command -v npm &> /dev/null; then
-    echo "npm could not be found. Installing..."
-    # Add appropriate package manager installation for your environment
-    # For example, on Ubuntu: sudo apt-get update && sudo apt-get install -y npm
-fi
+# Ensure we're in the project root
+cd "$(dirname "$0")/.."
 
-# Install yarn globally
-npm install -g yarn
+# Install Node.js and npm if not exist (customize for your environment)
+# Example for Ubuntu/Debian:
+# sudo apt-get update
+# sudo apt-get install -y nodejs npm
 
 # Install project dependencies
-yarn install
+npm install
 
-# Install Jest globally and locally
-npm install -g jest
-yarn add -D jest @types/jest ts-jest
+# Install Jest and TypeScript
+npm install --save-dev jest ts-jest @types/jest typescript
 
 # Make test scripts executable
 chmod +x scripts/run-tests.sh
