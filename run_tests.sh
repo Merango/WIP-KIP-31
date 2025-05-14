@@ -1,6 +1,8 @@
 #!/bin/bash
-# Ensure npm packages are installed
+set -e
+
+# Ensure dependencies are installed
 npm install
 
-# Run tests using npm test
-npm test
+# Run tests
+npx jest tests
