@@ -1,6 +1,3 @@
-/**
- * Core utility functions for the KIP-31 project
- */
 export class CoreUtils {
   /**
    * Validates if a value is a positive number
@@ -8,7 +5,7 @@ export class CoreUtils {
    * @returns Boolean indicating if the value is a positive number
    */
   static isPositiveNumber(value: number): boolean {
-    return typeof value === 'number' && value > 0;
+    return typeof value === 'number' && value > 0 && !isNaN(value) && isFinite(value);
   }
 
   /**
