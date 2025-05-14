@@ -5,7 +5,7 @@ export class CoreUtils {
    * @returns Boolean indicating if the value is a positive number
    */
   static isPositiveNumber(value: number): boolean {
-    return typeof value === 'number' && value > 0 && !isNaN(value) && isFinite(value);
+    return Number.isFinite(value) && value > 0;
   }
 
   /**
@@ -17,7 +17,7 @@ export class CoreUtils {
    */
   static safeAdd(a: number, b: number): number {
     if (!this.isPositiveNumber(a) || !this.isPositiveNumber(b)) {
-      throw new Error('Invalid input: both arguments must be positive numbers');
+      throw new Error('Both arguments must be positive numbers');
     }
     return a + b;
   }
