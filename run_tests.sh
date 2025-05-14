@@ -2,5 +2,5 @@
 # Ensure npm packages are installed
 npm install
 
-# Run tests using npx
-npx jest tests
+# Run tests using npm test
+npm test
